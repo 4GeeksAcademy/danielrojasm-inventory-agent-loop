@@ -1,0 +1,10 @@
+# Secretos
+.env
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Temporales de escritura atómica de la API
+*.csv.tmp
