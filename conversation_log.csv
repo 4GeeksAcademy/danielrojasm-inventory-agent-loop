@@ -1,0 +1,21 @@
+actor,message,tool_call,timestamp
+user,acaban de llegar 30 litros de leche de avena,,2026-10-03T17:10:02+02:00
+agent,{},list_inventory,2026-10-03T17:10:03+02:00
+tool,"[{""id"": 1, ""name"": ""Café arábica en grano (bolsa 1 kg)"", ""quantity"": 40, ""unit"": ""bolsas""}, {""id"": 2, ""name"": ""Café robusta en grano (bolsa 1 kg)"", ""quantity"": 18, ""unit"": ""bolsas""}, {""id"": 3, ""name"": ""Leche de avena"", ""quantity"": 8, ""unit"": ""litros""}, {""id"": 4, ""name"": ""Leche entera"", ""quantity"": 36, ""unit"": ""litros""}, {""id"": 5, ""name"": ""Azúcar moreno"", ""quantity"": 12.5, ""unit"": ""kg""}, {""id"": 6, ""name"": ""Vasos de papel 12 oz"", ""quantity"": 500, ""unit"": ""unidades""}, {""id"": 7, ""name"": ""Tapas para vasos 12 oz"", ""quantity"": 6, ""unit"": ""paquetes""}, {""id"": 8, ""name"": ""Filtros de papel V60"", ""quantity"": 4, ""unit"": ""cajas""}, {""id"": 9, ""name"": ""Sirope de vainilla"", ""quantity"": 9, ""unit"": ""botellas""}, {""id"": 10, ""name"": ""Cacao en polvo"", ""quantity"": 3.5, ""unit"": ""kg""}]",list_inventory,2026-10-03T17:10:03+02:00
+agent,"{""product_id"": 3, ""delta"": 30}",update_stock,2026-10-03T17:10:04+02:00
+tool,"{""id"": 3, ""name"": ""Leche de avena"", ""quantity"": 38, ""unit"": ""litros""}",update_stock,2026-10-03T17:10:04+02:00
+agent,"Listo, he registrado la entrada: la leche de avena pasa de 8 a 38 litros.",,2026-10-03T17:10:05+02:00
+user,vendimos 12 bolsas de arábica hoy,,2026-10-03T17:10:31+02:00
+agent,"{""product_id"": 1, ""delta"": -12}",update_stock,2026-10-03T17:10:32+02:00
+tool,"{""id"": 1, ""name"": ""Café arábica en grano (bolsa 1 kg)"", ""quantity"": 28, ""unit"": ""bolsas""}",update_stock,2026-10-03T17:10:32+02:00
+agent,Apuntada la venta: quedan 28 bolsas de café arábica.,,2026-10-03T17:10:33+02:00
+user,añade 5 botellas de sirope de caramelo y dime qué está por agotarse,,2026-10-03T17:11:05+02:00
+agent,"{""name"": ""Sirope de caramelo"", ""quantity"": 5, ""unit"": ""botellas""}",add_product,2026-10-03T17:11:06+02:00
+tool,"{""id"": 11, ""name"": ""Sirope de caramelo"", ""quantity"": 5, ""unit"": ""botellas""}",add_product,2026-10-03T17:11:06+02:00
+agent,{},get_low_stock_alerts,2026-10-03T17:11:07+02:00
+tool,"[{""id"": 7, ""name"": ""Tapas para vasos 12 oz"", ""quantity"": 6, ""unit"": ""paquetes""}, {""id"": 8, ""name"": ""Filtros de papel V60"", ""quantity"": 4, ""unit"": ""cajas""}, {""id"": 9, ""name"": ""Sirope de vainilla"", ""quantity"": 9, ""unit"": ""botellas""}, {""id"": 10, ""name"": ""Cacao en polvo"", ""quantity"": 3.5, ""unit"": ""kg""}, {""id"": 11, ""name"": ""Sirope de caramelo"", ""quantity"": 5, ""unit"": ""botellas""}]",get_low_stock_alerts,2026-10-03T17:11:07+02:00
+agent,"He añadido el sirope de caramelo (5 botellas). Por agotarse: cacao en polvo (3,5 kg), filtros V60 (4 cajas), sirope de caramelo (5 botellas), tapas 12 oz (6 paquetes) y sirope de vainilla (9 botellas).",,2026-10-03T17:11:08+02:00
+user,¿qué productos están por agotarse?,,2026-10-03T17:11:42+02:00
+agent,{},get_low_stock_alerts,2026-10-03T17:11:43+02:00
+tool,"[{""id"": 7, ""name"": ""Tapas para vasos 12 oz"", ""quantity"": 6, ""unit"": ""paquetes""}, {""id"": 8, ""name"": ""Filtros de papel V60"", ""quantity"": 4, ""unit"": ""cajas""}, {""id"": 9, ""name"": ""Sirope de vainilla"", ""quantity"": 9, ""unit"": ""botellas""}, {""id"": 10, ""name"": ""Cacao en polvo"", ""quantity"": 3.5, ""unit"": ""kg""}, {""id"": 11, ""name"": ""Sirope de caramelo"", ""quantity"": 5, ""unit"": ""botellas""}]",get_low_stock_alerts,2026-10-03T17:11:43+02:00
+agent,"Ahora mismo hay 5 productos por debajo de 10: cacao en polvo (3,5 kg), filtros V60 (4 cajas), sirope de caramelo (5 botellas), tapas 12 oz (6 paquetes) y sirope de vainilla (9 botellas). Lo más urgente es reponer el cacao y los filtros.",,2026-10-03T17:11:44+02:00
